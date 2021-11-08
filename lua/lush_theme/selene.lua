@@ -73,6 +73,8 @@ local green4 = hsl(138, 100, 69)
 local green5 = hsl(120, 100, 42)
 
 local orange1 = hsl(28, 100, 50)
+local orange2 = hsl(20, 100, 50)
+local orange3 = hsl(10, 90, 50)
 
 local purple1 = hsl(290, 100, 60)
 local purple2 = hsl(290, 60, 30)
@@ -123,13 +125,13 @@ local theme = lush(function()
     FoldColumn   { bg = white, fg = hsl(225, 60, 52) }, -- 'foldcolumn'
     SignColumn   { fg = white }, -- column where |signs| are displayed
     IncSearch    { bg = hsl(44, 87, 94), fg = red }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
-    Substitute   { Search }, -- |:substitute| replacement text highlighting
+    Substitute   { bg = green1, fg = black }, -- |:substitute| replacement text highlighting
     LineNr       { bg = light_grey, fg = hsl(248, 100, 72) }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
-    CursorLineNr { bf = light_grey, fg = white }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
+    CursorLineNr { bg = light_grey, fg = white }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
     MatchParen   { bg = grey2, fg = yellow1 }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
     ModeMsg      { fg = yellow1 }, -- 'showmode' message (e.g., "-- INSERT -- ")
     -- MsgArea      { }, -- Area for messages and cmdline
-    MsgSeparator { StatusLine }, -- Separator for scrolled messages, `msgsep` flag of 'display'
+    MsgSeparator { bg = grey4, fg = black }, -- Separator for scrolled messages, `msgsep` flag of 'display'
     MoreMsg      { fg = yellow2 }, -- |more-prompt|
     NonText      { fg = grey3 }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
     Normal       { bg = black, fg = white }, -- normal text
@@ -172,8 +174,8 @@ local theme = lush(function()
     Boolean        { fg = purple7 }, --  a boolean constant: TRUE, false
     Float          { fg = purple8 }, --    a floating point constant: 2.3e10
 
-    Identifier     { fg = purple9 }, -- (preferred) any variable name
-    Function       { fg = blue4 }, -- function name (also: methods for classes)
+    Identifier     { fg = orange2 }, -- (preferred) any variable name
+    Function       { fg = orange3 }, -- function name (also: methods for classes)
 
     Statement      { fg = yellow2 }, -- (preferred) any statement
     -- Conditional    { }, --  if, then, else, endif, switch, etc.
@@ -194,8 +196,8 @@ local theme = lush(function()
     Structure      { fg = green4 }, --  struct, union, enum, etc.
     -- Typedef        { }, --  A typedef
 
-    Special        { fg = yellow3 }, -- (preferred) any special symbol
-    -- SpecialChar    { }, --  special character in a constant
+    Special        { fg = orange1 }, -- (preferred) any special symbol
+    SpecialChar    { fg = purple6 }, --  special character in a constant
     -- Tag            { }, --    you can use CTRL-] on this
     Delimiter      { fg = blue3 }, --  character that needs attention
     -- SpecialComment { }, -- special things inside a comment
@@ -208,9 +210,9 @@ local theme = lush(function()
     -- ("Ignore", below, may be invisible...)
     -- Ignore         { }, -- (preferred) left blank, hidden  |hl-Ignore|
 
-    Error          { bg = yellow1, fg = red }, -- (preferred) any erroneous construct
+    Error          { bg = yellow1, fg = red, gui = "bold" }, -- (preferred) any erroneous construct
 
-    Todo           { bg = yellow2, fg = blue1 }, -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
+    Todo           { bg = yellow2, fg = blue1, gui = "bold" }, -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 
     -- These groups are for the native LSP client. Some other LSP clients may
     -- use these groups, or use their own. Consult your LSP client's
