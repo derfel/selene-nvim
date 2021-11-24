@@ -56,6 +56,8 @@ local black = hsl(0, 0, 0)
 local white = hsl(0, 0, 100)
 local red = hsl(0, 100, 50)
 
+local red1 = hsl(0, 100, 67)
+
 local yellow1 = hsl(51, 100, 50)
 local yellow2 = hsl(64, 100, 50)
 local yellow3 = hsl(65, 92, 76)
@@ -65,17 +67,24 @@ local blue1 = hsl(208, 100, 50)
 local blue2 = hsl(240, 100, 28)
 local blue3 = hsl(185, 40, 50)
 local blue4 = hsl(203, 52, 60)
+local blue5 = hsl(200, 100, 80)
+local blue6 = hsl(204, 55, 53)
+local blue7 = hsl(187, 80, 42)
 
 local green1 = hsl(146, 100, 62)
 local green2 = hsl(172, 42, 30)
 local green3 = hsl(120, 100, 50)
 local green4 = hsl(138, 100, 69)
 local green5 = hsl(120, 100, 42)
+local green6 = hsl(150, 70, 72)
+local green7 = hsl(177, 70, 40)
 
 local orange1 = hsl(28, 100, 50)
 local orange2 = hsl(20, 100, 50)
 local orange3 = hsl(10, 90, 50)
+local orange4 = hsl(45, 100, 70)
 
+local purple0 = hsl(300, 100, 50)
 local purple1 = hsl(290, 100, 60)
 local purple2 = hsl(290, 60, 30)
 local purple3 = hsl(290, 100, 19)
@@ -161,6 +170,14 @@ local theme = lush(function()
     Whitespace   { fg = grey3 }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
     WildMenu     { bg = light_grey, fg = yellow1 }, -- current match in 'wildmenu' completion
 
+    -- Custom Extra
+    ScrollView   { bg = purple5 }, -- current match in 'wildmenu' completion
+
+    IndentGuidesEven            { bg="#1d1d1d", fg="#cccccc", }, -- IndentGuidesEven xxx guifg=#cccccc guibg=#1d1d1d
+    IndentGuidesEvenVirtext     { bg="#cccccc", fg="#1d1d1d", }, -- IndentGuidesEvenVirtext xxx guifg=#1d1d1d guibg=#cccccc
+    IndentGuidesOdd             { bg="#272727", fg="#cccccc", }, -- IndentGuidesOdd xxx guifg=#cccccc guibg=#272727
+    IndentGuidesOddVirtext      { bg="#cccccc", fg="#272727", }, -- IndentGuidesOddVirtext xxx guifg=#272727 guibg=#cccccc
+
     -- These groups are not listed as default vim groups,
     -- but they are defacto standard group names for syntax highlighting.
     -- commented out groups should chain up to their "preferred" group by
@@ -168,14 +185,14 @@ local theme = lush(function()
     -- Uncomment and edit if you want more specific syntax highlighting.
 
     Constant       { fg = purple6 }, -- (preferred) any constant
-    String         { fg = purple6 }, --   a string constant: "this is a string"
+    String         { fg = purple0 }, --   a string constant: "this is a string"
     Character      { fg = purple8 }, --  a character constant: 'c', '\n'
     Number         { fg = purple8 }, --   a number constant: 234, 0xff
     Boolean        { fg = purple7 }, --  a boolean constant: TRUE, false
     Float          { fg = purple8 }, --    a floating point constant: 2.3e10
 
-    Identifier     { fg = orange2 }, -- (preferred) any variable name
-    Function       { fg = orange3 }, -- function name (also: methods for classes)
+    Identifier     { fg = blue5 }, -- (preferred) any variable name
+    Function       { fg = orange1 }, -- function name (also: methods for classes)
 
     Statement      { fg = yellow2 }, -- (preferred) any statement
     -- Conditional    { }, --  if, then, else, endif, switch, etc.
