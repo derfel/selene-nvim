@@ -121,7 +121,7 @@ local theme = lush(function()
     CursorColumn { bg = ColorColumn.bg }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
     CursorLine   { bg = ColorColumn.bg, sp = hsl(46, 42, 88) }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
     Directory    { fg = blue1 }, -- directory names (and other special names in listings)
-    DiffAdd      { bg = hls(0, 0, 20), fg = green5 }, -- diff mode: Added line |diff.txt|
+    DiffAdd      { bg = hsl(0, 0, 20), fg = green5 }, -- diff mode: Added line |diff.txt|
     DiffChange   { bg = DiffAdd.bg, fg = yellow4 }, -- diff mode: Changed line |diff.txt|
     DiffDelete   { bg = DiffAdd.bg, fg = red }, -- diff mode: Deleted line |diff.txt|
     DiffText     { bg = DiffAdd.bg, fg = blue1 }, -- diff mode: Changed text within a changed line |diff.txt|
